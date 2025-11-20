@@ -1,0 +1,111 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>A Straightforward Monetary Solicitation Interface</title>
+    <link rel="stylesheet" href="styles.css">
+    <style>
+        .payment-btn {
+            background-color: transparent;
+            border: none;
+            cursor: pointer;
+            transition: all 0.3s ease;
+            padding: 10px;
+        }
+        
+        .payment-btn:hover {
+            transform: scale(1.1);
+            opacity: 0.8;
+        }
+        
+        .payment-btn img {
+            height: 60px;
+            width: auto;
+            display: block;
+        }
+        
+        .rig-tagline {
+            font-size: 0.8rem;
+            letter-spacing: 0.15em;
+            opacity: 0.6;
+            margin-top: 20px;
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <header>
+            <button class="theme-toggle" onclick="toggleTheme()" id="themeBtn">🌙</button>
+            <h1>A STRAIGHTFORWARD MONETARY SOLICITATION INTERFACE</h1>
+        </header>
+
+        <main>
+            <div class="payment-grid">
+                <!-- English -->
+                <div class="payment-box">
+                    <div class="language-label">[ ENGLISH ]</div>
+                    <div class="quote">Give me a dollar because I don't have one myself</div>
+                    <div class="amount">AMOUNT: $1.00 USD</div>
+                </div>
+
+                <!-- Français -->
+                <div class="payment-box">
+                    <div class="language-label">[ FRANÇAIS ]</div>
+                    <div class="quote">Donnez-moi un dollar parce que je n'en ai pas moi-même</div>
+                    <div class="amount">AMOUNT: €0.92 EUR</div>
+                </div>
+
+                <!-- Japanese -->
+                <div class="payment-box">
+                    <div class="language-label">[ 日本語 ]</div>
+                    <div class="quote">私は自分でドルを持っていないので、1ドルをください</div>
+                    <div class="amount">AMOUNT: ¥149.50 JPY</div>
+                </div>
+
+                <!-- Español -->
+                <div class="payment-box">
+                    <div class="language-label">[ ESPAÑOL ]</div>
+                    <div class="quote">Dame un dólar porque yo mismo no tengo uno</div>
+                    <div class="amount">AMOUNT: €0.92 EUR</div>
+                </div>
+
+                <!-- Hindi -->
+                <div class="payment-box">
+                    <div class="language-label">[ हिंदी ]</div>
+                    <div class="quote">मुझे एक डॉलर दे दो क्योंकि मेरे पास खुद का नहीं है</div>
+                    <div class="amount">AMOUNT: ₹83.25 INR</div>
+                </div>
+
+                <!-- Norsk -->
+                <div class="payment-box">
+                    <div class="language-label">[ NORSK ]</div>
+                    <div class="quote">Gi meg en dollar fordi jeg ikke har en selv</div>
+                    <div class="amount">AMOUNT: kr10.50 NOK</div>
+                </div>
+            </div>
+
+            <footer>
+                <div class="payment-section">
+                    <h2>AUTHORIZED PAYMENT PROCESSORS</h2>
+                    <div class="payment-buttons">
+                        <button class="payment-btn" onclick="handlePayment('apple-pay')" aria-label="Apple Pay">
+                            <img src="apple-pay.png" alt="Apple Pay">
+                        </button>
+                        <button class="payment-btn" onclick="handlePayment('google-pay')" aria-label="Google Pay">
+                            <img src="google-pay.png" alt="Google Pay">
+                        </button>
+                        <button class="payment-btn" onclick="handlePayment('paypal')" aria-label="PayPal">
+                            <img src="paypal.png" alt="PayPal">
+                        </button>
+                    </div>
+                    <div class="security-note">SECURE TRANSACTION PROTOCOL ENABLED</div>
+                    <div class="rig-tagline">Robust Income Generator (RIG)®</div>
+                </div>
+            </footer>
+        </main>
+    </div>
+
+    <script src="script.js"></script>
+</body>
+</html>

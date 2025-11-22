@@ -5,23 +5,25 @@ function toggleDarkMode() {
     button.textContent = document.body.classList.contains('dark-mode') ? '☀️' : '🌙';
 }
 
-// Payment handler function
-function handlePayment() {
-    // TODO: Add Stripe Payment Link here
-    // For now, show alert
-    alert('Payment integration coming soon! This will redirect to Stripe checkout.');
+// Payment handler function with analytics tracking
+function handlePayment(event) {
+    // Get which language box was clicked
+    const languageBox = event.target.closest('.payment-box');
+    const language = languageBox.querySelector('.language-label').textContent.trim();
     
-    // When Stripe is set up, replace above with:
-    // window.location.href = 'YOUR_STRIPE_PAYMENT_LINK_HERE';
+    // Track the event in Vercel Analytics
+    if (window.va) {
+        window.va('track', 'Payment Button Click', { language: language });
+    }
+    
+    // Also log to console for debugging
+    console.log('Payment button clicked in:', language);
+    
+    // Show message to user
+    alert('Thank you for your interest! 💰\n\nPayment integration coming soon.\n\nButton clicked in: ' + language);
 }
 
-// Optional: Track button clicks for analytics
+// Optional: Track page views
 document.addEventListener('DOMContentLoaded', function() {
-    const buttons = document.querySelectorAll('.pay-button');
-    
-    buttons.forEach(button => {
-        button.addEventListener('click', function() {
-            console.log('Payment button clicked');
-        });
-    });
+    console.log('Page loaded and ready for tracking');
 });
